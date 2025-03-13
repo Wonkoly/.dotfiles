@@ -30,10 +30,11 @@ keys = [
     Key([mod], "space", lazy.spawn("rofi -show drun"), desc="Abrir Rofi"),
     Key([mod], "f", lazy.spawn(browser), desc="Abre el navegador por defecto"),
     Key([mod], "e", lazy.spawn(explor_file), desc="Abre el navegador de archivos por defecto"),
+    Key([mod, "control"], "l", lazy.spawn("lockscreen"), desc="Bloquear pantalla"),
 
     # Atajo Cambio de Teclados
-    Key([mod], "z", lazy.spawn("setxkbmap -layout us,latam -option grp:alt_shift_toggle"), desc="Alternar entre inglés y español"),
-
+    Key([mod], "z", lazy.spawn("setxkbmap -layout 'us,latam' -option 'grp:alt_shift_toggle'"), desc="Alternar entre inglés y español"),
+    
     # Volumen
     Key([], "XF86AudioRaiseVolume", lazy.spawn("pactl set-sink-volume @DEFAULT_SINK@ +5%"), desc="Subir volumen"),
     Key([], "XF86AudioLowerVolume", lazy.spawn("pactl set-sink-volume @DEFAULT_SINK@ -5%"), desc="Bajar volumen"),

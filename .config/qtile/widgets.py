@@ -24,19 +24,14 @@ widgets = [
 
     ),
     widget.Spacer(),
-    widget.Clock(format="%Y-%m-%d %H:%M"),
-    widget.Spacer(),
-    widget.Battery(
-        format="{percent:2.0%}  ",  # Muestra el porcentaje de batería
-        update_interval=10,  # Se actualiza cada 10 segundos
-        charge_char="⚡",  # Icono cuando está cargando
-        discharge_char="🔋",  # Icono cuando está descargando
-        empty_char="❌",  # Icono cuando la batería está vacía
-        full_char="✅",  #
+    widget.Clock(
+        format="%Y-%m-%d %H:%M",
+        mouse_callbacks={"Button1": lambda: qtile.cmd_spawn("dunstctl history-pop")}
     ),
+    widget.Spacer(),
     widget.Backlight(
         backlight_name="intel_backlight",  # Cambia esto según tu hardware
-        format="󰛨   {percent:2.0%}",  # Muestra el brillo en porcentaje
+        format="{percent:2.0%}",  # Muestra el brillo en porcentaje
         update_interval=1
     ),
     widget.Wlan(
@@ -55,8 +50,7 @@ widgets = [
         fontsize=16,
         mouse_callbacks={
             "Button1": lambda: qtile.cmd_spawn("poweroff"),  # Apagar
-            "Button2": lambda: qtile.cmd_spawn("systemctl suspend"),  # Suspender
-            "Button3": lambda: qtile.cmd_spawn("i3lock -c 000000"),  # Bloquear pantalla
+            "Button3": lambda: qtile.cmd_spawn("lockscreen"),  # Bloquear pantalla
         },
         foreground=colors["foreground"],
         padding=10,

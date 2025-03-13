@@ -1,83 +1,82 @@
-# Dotfiles para Qtile y Arch Linux
+# Configuración Avanzada de Qtile
 
-Este repositorio contiene la configuración personalizada de Qtile y otros dotfiles para mi entorno en Arch Linux.
+Este repositorio contiene una configuración altamente personalizada de **Qtile**, diseñada para maximizar la productividad y eficiencia en un entorno de escritorio minimalista y altamente configurable.
 
-## 📂 Estructura del Repositorio
+## 📌 Características Destacadas
+- **Tema:** Uso de la paleta de colores **Gruvbox**.
+- **Diseños de Ventana:** MonadTall, MonadWide, Floating, Columns y Max.
+- **Widgets Personalizados:** Información sobre batería, red, hora, brillo y más.
+- **Atajos de Teclado:** Navegación rápida y fluida.
+- **Sistema de Autoinicio:** Para ejecutar aplicaciones esenciales al inicio.
+- **Transparencia en Ventanas:** Soporte para Kitty, Firefox y VS Code.
+- **Integración con Rofi:** Lanzador de aplicaciones dinámico.
+- **Soporte para Multimedia:** Control de brillo y volumen mediante teclas especiales.
+- **Compatibilidad con Múltiples Monitores.**
+
+## 📂 Repositorio
+El código fuente y configuración completa se encuentran en **[.dotfiles](https://github.com/Wonkoly/.dotfiles)**.
+
+## 🛠️ Requisitos
+Asegúrate de tener instalados los siguientes paquetes:
+```bash
+sudo pacman -S qtile rofi kitty firefox pcmanfm brightnessctl pulseaudio pavucontrol network-manager-applet
 ```
-~/.dotfiles
-├── .config
-│   ├── qtile
-│   │   ├── autostart.py       # Script de inicio automático
-│   │   ├── autostart.sh       # Ejecuta procesos en segundo plano
-│   │   ├── config.py          # Configuración principal de Qtile
-│   │   ├── floating.py        # Configuración de ventanas flotantes
-│   │   ├── groups.py          # Configuración de los grupos de trabajo
-│   │   ├── hooks.py           # Hooks para eventos específicos
-│   │   ├── keys.py            # Atajos de teclado personalizados
-│   │   ├── layouts.py         # Configuración de los layouts
-│   │   ├── mouse.py           # Configuración del ratón
-│   │   ├── screens.py         # Configuración de las pantallas y la barra
-│   │   ├── theme.py           # Configuración de colores y temas
-│   │   ├── widgets.py         # Configuración de los widgets
-│   ├── otras_carpetas...      # Otros dotfiles
-├── .gitignore                 # Archivos a ignorar en el repositorio
-├── README.md                  # Este archivo
-```
-
-## 🛠️ Instalación
-
-### 1️⃣ Clonar el repositorio
-
-```sh
-git clone --bare https://github.com/tu-usuario/dotfiles.git $HOME/.dotfiles
+Para usuarios de Fedora:
+```bash
+sudo dnf install qtile rofi kitty firefox pcmanfm brightnessctl pulseaudio-utils pavucontrol network-manager-applet
 ```
 
-### 2️⃣ Definir alias para gestionar los dotfiles
-
-```sh
-alias dotfiles='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+## 📥 Instalación
+Clona este repositorio en la carpeta de configuración:
+```bash
+git clone https://github.com/Wonkoly/.dotfiles ~/.config/qtile
 ```
 
-### 3️⃣ Aplicar los dotfiles en el sistema
-
-```sh
-dotfiles checkout
-```
-Si hay conflictos, puedes resolverlos moviendo archivos en conflicto:
-```sh
-mkdir -p ~/.dotfiles-backup
-rsync -av --progress ~/.config/qtile ~/.dotfiles-backup/
-dotfiles checkout
+Otorga permisos de ejecución al script de autoinicio:
+```bash
+chmod +x ~/.config/qtile/autostart.sh
 ```
 
-### 4️⃣ Ignorar archivos no deseados
+Selecciona **Qtile** como tu gestor de ventanas en tu gestor de sesiones.
 
-```sh
-dotfiles config --local status.showUntrackedFiles no
-```
+## 🏗️ Estructura del Proyecto
+- `config.py` - Archivo principal que une todas las configuraciones.
+- `keys.py` - Definición de atajos de teclado.
+- `groups.py` - Configuración de grupos y etiquetas personalizadas.
+- `layouts.py` - Diseño de las ventanas.
+- `widgets.py` - Configuración de widgets.
+- `screens.py` - Barra de estado y pantallas.
+- `autostart.py` - Script de autoinicio.
+- `autostart.sh` - Aplicaciones que se ejecutan al iniciar Qtile.
+- `mouse.py` - Configuración del ratón.
+- `hooks.py` - Hooks personalizados para eventos.
+- `floating.py` - Configuración de ventanas flotantes.
+- `theme.py` - Paleta de colores y fuentes.
 
-### 5️⃣ Instalar dependencias necesarias
-```sh
-sudo pacman -S qtile rofi alacritty brightnessctl pulseaudio pavucontrol
-```
+## 🖥️ Uso de Qtile
+Algunos de los atajos de teclado más útiles:
+- **Cambio de Grupo:** `MOD + [1-5]`
+- **Mover Ventanas entre Grupos:** `MOD + Shift + [1-5]`
+- **Abrir Terminal:** `MOD + Enter`
+- **Abrir Navegador:** `MOD + F`
+- **Explorador de Archivos:** `MOD + E`
+- **Lanzador de Aplicaciones (Rofi):** `MOD + Space`
+- **Recargar Configuración:** `MOD + Control + R`
+- **Salir de Qtile:** `MOD + Control + Q`
+- **Control de Volumen:** `XF86AudioRaiseVolume / XF86AudioLowerVolume / XF86AudioMute`
+- **Ajuste de Brillo:** `XF86MonBrightnessUp / XF86MonBrightnessDown`
 
-## 🚀 Uso
+## 🎨 Personalización Adicional
+Si deseas modificar colores, fuentes o estilos, edita el archivo `theme.py`.
+Para modificar widgets, edita `widgets.py`. 
 
-Para actualizar y sincronizar cambios:
-```sh
-dotfiles status
-dotfiles add .config/qtile/config.py
-dotfiles commit -m "Actualización de configuración"
-dotfiles push
-```
+## 🚀 ToDo
+- **Soporte para Wayland con Qtile Next.**
+- **Mejor gestión de ventanas flotantes.**
+- **Integración de cava Widget y otros indicadores.**
 
-Si quieres eliminar un enlace simbólico:
-```sh
-rm ~/.config/qtile
-```
 
----
-
-Este repositorio permite una fácil administración y versionado de mis configuraciones personales en Arch Linux con Qtile.
+## 📜 Licencia
+Este proyecto es de código abierto y está bajo la licencia **MIT**.
 
 
