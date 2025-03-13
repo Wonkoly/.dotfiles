@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Tomar una captura de pantalla
+scrot /tmp/lockscreen.png
+
+# Aplicar desenfoque y color de fondo Gruvbox (corregido para IM7)
+magick /tmp/lockscreen.png -blur 0x5 -fill "#282828" -colorize 30% /tmp/lockscreen.png
+
+# Bloquear pantalla con i3lock estándar
+i3lock -i /tmp/lockscreen.png -c 282828
+
+# Eliminar la imagen después de desbloquear
+rm /tmp/lockscreen.png
