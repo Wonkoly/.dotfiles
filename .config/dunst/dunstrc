@@ -1,0 +1,32 @@
+[global]
+    monitor = 0
+    follow = mouse
+    width = 300
+    height = 100
+    origin = top-right
+    offset = 10x50
+    transparency = 10
+    corner_radius = 10
+    frame_width = 2
+    frame_color = "#fe8019"   # Naranja Gruvbox (Borde)
+    font = "CaskaydiaMono Nerd Font 10"
+    foreground = "#ebdbb2"   # Blanco Gruvbox (Texto)
+    background = "#282828"   # Negro Gruvbox (Fondo)
+    highlight = "#fabd2f"    # Amarillo Gruvbox (Resaltado)
+
+[urgency_low]
+    background = "#282828"  # Fondo oscuro Gruvbox
+    foreground = "#b8bb26"  # Verde Gruvbox
+    frame_color = "#b8bb26"
+
+[urgency_normal]
+    background = "#282828"
+    foreground = "#ebdbb2"  # Blanco Gruvbox
+    frame_color = "#83a598" # Azul suave Gruvbox
+
+[urgency_critical]
+    background = "#282828"
+    foreground = "#fb4934"  # Rojo Gruvbox (Urgente)
+    frame_color = "#fb4934"
+    timeout = 0  # Mantiene la notificación hasta que la cierres
+
