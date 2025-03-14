@@ -18,7 +18,7 @@ def move_window_to_group(window):
     app_group_map = {
         "firefox": "2",  # Firefox en el grupo 'web'
         "kitty": "1",    # Kitty en el grupo 'term'
-        "discord": "4",  # Discord en el grupo 'chat'
+        "obsidian": "4",  # Discord en el grupo 'chat'
         "spotify": "5", # Spotify en el grupo 'music'
         "code": "3", # Spotify en el grupo 'music'
     }
