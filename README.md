@@ -57,6 +57,8 @@ git clone https://github.com/wonkoly/.dotfiles.git
 ln -sf ~/.dotfiles/.config/qtile/* ~/.config/ # Para crear un enlace simbolico 
 # o tambien puedes moverlo
 mv ~/.dotfiles/.config/qtile/* ~/.config/
+# Da permisos de ejecucion al autostart.sh
+chmod +x ~/.dotfiles/.config/qtile/autostart.sh 
 ```
 
 ### 🔄 Reiniciar Qtile
