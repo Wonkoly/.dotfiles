@@ -4,8 +4,10 @@ from groups import groups
 
 mod = "mod4"
 terminal = "kitty"
+menu_manager = "rofi -show drun"
 browser = "firefox"
 explor_file = "pcmanfm"
+screenshot_manager = "flameshot gui"
 
 keys = [
 
@@ -27,10 +29,11 @@ keys = [
     Key([mod], "q", lazy.window.kill(), desc="Cerrar ventana"),
     Key([mod, "control"], "r", lazy.reload_config(), desc="Recargar configuración"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Cerrar sesión"),
-    Key([mod], "space", lazy.spawn("rofi -show drun"), desc="Abrir Rofi"),
+    Key([mod], "space", lazy.spawn(menu_manager), desc="Abrir Rofi"),
     Key([mod], "f", lazy.spawn(browser), desc="Abre el navegador por defecto"),
     Key([mod], "e", lazy.spawn(explor_file), desc="Abre el navegador de archivos por defecto"),
     Key([mod, "control"], "l", lazy.spawn("lockscreen"), desc="Bloquear pantalla"),
+    Key([], "Print", lazy.spawn(screenshot_manager), desc="Captura de pantalla"),
 
     # Atajo Cambio de Teclados
     Key([mod], "z", lazy.spawn("setxkbmap -layout 'us,latam' -option 'grp:alt_shift_toggle'"), desc="Alternar entre inglés y español"),
