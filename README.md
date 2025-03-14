@@ -1,82 +1,102 @@
-# Configuración Avanzada de Qtile
+# 🎨 Dotfiles de Qtile en Arch Linux
 
-Este repositorio contiene una configuración altamente personalizada de **Qtile**, diseñada para maximizar la productividad y eficiencia en un entorno de escritorio minimalista y altamente configurable.
+Este repositorio contiene mi configuración personalizada de Qtile en Arch Linux, enfocada en minimalismo, eficiencia y estética. Si estás buscando una configuración ligera, con una interfaz atractiva y completamente personalizable, ¡este es el repo!
 
-## 📌 Características Destacadas
-- **Tema:** Uso de la paleta de colores **Gruvbox**.
-- **Diseños de Ventana:** MonadTall, MonadWide, Floating, Columns y Max.
-- **Widgets Personalizados:** Información sobre batería, red, hora, brillo y más.
-- **Atajos de Teclado:** Navegación rápida y fluida.
-- **Sistema de Autoinicio:** Para ejecutar aplicaciones esenciales al inicio.
-- **Transparencia en Ventanas:** Soporte para Kitty, Firefox y VS Code.
-- **Integración con Rofi:** Lanzador de aplicaciones dinámico.
-- **Soporte para Multimedia:** Control de brillo y volumen mediante teclas especiales.
-- **Compatibilidad con Múltiples Monitores.**
+---
 
-## 📂 Repositorio
-El código fuente y configuración completa se encuentran en **[.dotfiles](https://github.com/Wonkoly/.dotfiles)**.
+## 🚀 Tecnologías utilizadas
 
-## 🛠️ Requisitos
-Asegúrate de tener instalados los siguientes paquetes:
-```bash
-sudo pacman -S qtile rofi kitty firefox pcmanfm brightnessctl pulseaudio pavucontrol network-manager-applet
+| Componente | Descripción |
+|------------|-------------|
+| **Qtile** | Administrador de ventanas en mosaico, completamente programable en Python. |
+| **X11** | Servidor de pantalla utilizado. |
+| **Ly** | Gestor de sesiones ligero, rápido y visualmente atractivo. |
+| **Picom** | Compositor para efectos de transparencia y suavizado de bordes. |
+| **Neovim (nvim)** | Editor de texto poderoso y personalizable. |
+| **i3lock** | Bloqueo de pantalla minimalista. |
+| **Kitty** | Emulador de terminal rápido y con soporte para GPU. |
+| **Dunst** | Notificador ligero y configurable. |
+
+---
+
+## 🖥️ Vista previa
+
+
+
+---
+
+## 📂 Estructura del repositorio
+
+Este repositorio está organizado de manera modular para facilitar la personalización:
+
+- 📜 `config.py` → Configuración principal de Qtile, importando todos los módulos.
+- 🏗️ `layouts.py` → Diseños de ventana personalizados, incluyendo `MonadTall`, `Floating` y `Columns`.
+- 🏢 `groups.py` → Espacios de trabajo, etiquetados con iconos NerdFont.
+- 📊 `widgets.py` → Configuración de la barra de estado con reloj, WiFi, volumen, y más.
+- 🎨 `theme.py` → Esquema de colores y fuentes basado en el tema **Gruvbox**.
+- 🔄 `autostart.py` → Scripts de inicio automático.
+- 🎹 `keys.py` → Atajos de teclado intuitivos y eficientes.
+- 🖱️ `mouse.py` → Configuración de gestos con el mouse.
+- 🔔 `hooks.py` → Eventos y comportamientos automáticos (ej. transparencia de ventanas).
+- 🏞️ `screens.py` → Configuración de pantallas y barras de estado.
+- 🪟 `floating.py` → Configuración de ventanas flotantes.
+
+---
+
+## 🔧 Instalación y configuración
+
+Para instalar esta configuración en tu sistema, sigue estos pasos:
+
+### 📥 Clonar el repositorio
+```sh
+git clone https://github.com/wonkoly/.dotfiles.git
 ```
-Para usuarios de Fedora:
-```bash
-sudo dnf install qtile rofi kitty firefox pcmanfm brightnessctl pulseaudio-utils pavucontrol network-manager-applet
+
+### 🔗 Crear enlaces simbólicos
+```sh
+ln -sf ~/.dotfiles/.config/qtile/* ~/.config/ # Para crear un enlace simbolico 
+# o tambien puedes moverlo
+mv ~/.dotfiles/.config/qtile/* ~/.config/
 ```
 
-## 📥 Instalación
-Clona este repositorio en la carpeta de configuración:
-```bash
-git clone https://github.com/Wonkoly/.dotfiles ~/.config/qtile
+### 🔄 Reiniciar Qtile
+```sh
+qtile cmd-obj -o cmd -f restart
 ```
 
-Otorga permisos de ejecución al script de autoinicio:
-```bash
-chmod +x ~/.config/qtile/autostart.sh
+---
+
+## 📦 Dependencias
+
+Para que esta configuración funcione correctamente en Arch Linux, instala los siguientes paquetes:
+```sh
+sudo pacman -S qtile ly picom kitty dunst i3lock rofi nerd-fonts-jetbrains-mono
+```
+Si usas `yay` para paquetes AUR, también puedes instalar `ttf-nerd-fonts-symbols` para mejor compatibilidad de iconos:
+```sh
+yay -S ttf-nerd-fonts-symbols
 ```
 
-Selecciona **Qtile** como tu gestor de ventanas en tu gestor de sesiones.
+---
 
-## 🏗️ Estructura del Proyecto
-- `config.py` - Archivo principal que une todas las configuraciones.
-- `keys.py` - Definición de atajos de teclado.
-- `groups.py` - Configuración de grupos y etiquetas personalizadas.
-- `layouts.py` - Diseño de las ventanas.
-- `widgets.py` - Configuración de widgets.
-- `screens.py` - Barra de estado y pantallas.
-- `autostart.py` - Script de autoinicio.
-- `autostart.sh` - Aplicaciones que se ejecutan al iniciar Qtile.
-- `mouse.py` - Configuración del ratón.
-- `hooks.py` - Hooks personalizados para eventos.
-- `floating.py` - Configuración de ventanas flotantes.
-- `theme.py` - Paleta de colores y fuentes.
+## 🎨 Personalización avanzada
 
-## 🖥️ Uso de Qtile
-Algunos de los atajos de teclado más útiles:
-- **Cambio de Grupo:** `MOD + [1-5]`
-- **Mover Ventanas entre Grupos:** `MOD + Shift + [1-5]`
-- **Abrir Terminal:** `MOD + Enter`
-- **Abrir Navegador:** `MOD + F`
-- **Explorador de Archivos:** `MOD + E`
-- **Lanzador de Aplicaciones (Rofi):** `MOD + Space`
-- **Recargar Configuración:** `MOD + Control + R`
-- **Salir de Qtile:** `MOD + Control + Q`
-- **Control de Volumen:** `XF86AudioRaiseVolume / XF86AudioLowerVolume / XF86AudioMute`
-- **Ajuste de Brillo:** `XF86MonBrightnessUp / XF86MonBrightnessDown`
+### 🔵 Cambiar colores y fuentes
+Modifica `theme.py` para personalizar el esquema de colores y fuentes.
 
-## 🎨 Personalización Adicional
-Si deseas modificar colores, fuentes o estilos, edita el archivo `theme.py`.
-Para modificar widgets, edita `widgets.py`. 
+### ⌨️ Editar atajos de teclado
+Los atajos de teclado están definidos en `keys.py`. Puedes cambiarlos según tus preferencias.
 
-## 🚀 ToDo
-- **Soporte para Wayland con Qtile Next.**
-- **Mejor gestión de ventanas flotantes.**
-- **Integración de cava Widget y otros indicadores.**
+### 📊 Modificar la barra de estado
+Personaliza `widgets.py` para agregar o quitar widgets según tus necesidades.
 
+---
 
-## 📜 Licencia
-Este proyecto es de código abierto y está bajo la licencia **MIT**.
+## 🤝 Contribuir
 
+Si deseas aportar mejoras, puedes hacer un **fork** de este repositorio y enviar un **pull request**. ¡Toda colaboración es bienvenida :)!
+
+---
+
+*Este README proporciona una guía detallada sobre la configuración de Qtile en este repositorio. Asegúrate de ajustar las rutas según tu configuración.*
 
