@@ -20,7 +20,7 @@ def move_window_to_group(window):
         "kitty": "1",    # Kitty en el grupo 'term'
         "obsidian": "4",  # Discord en el grupo 'chat'
         "spotify": "5", # Spotify en el grupo 'music'
-        "code": "3", # Spotify en el grupo 'music'
+        "code-oss": "3", 
     }
 
     wm_class = window.get_wm_class()  # Obtiene la clase de la ventana

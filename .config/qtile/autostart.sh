@@ -4,7 +4,7 @@
 picom --config ~/.config/picom/picom.conf &
 
 # Establecer fondo de pantalla con feh
-feh --bg-scale ~/Images/soul-eater-grovbox.png &
+feh --bg-scale ~/Images/soul-eater1.jpg &
 
 # Iniciar el applet de NetworkManager para gestionar redes
 nm-applet &
