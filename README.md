@@ -21,7 +21,13 @@ Este repositorio contiene mi configuración personalizada de Qtile en Arch Linux
 
 ## 🖥️ Vista previa
 
+![Captura de pantalla de Qtile Barra de estado](img/img_bar.png)
 
+![Captura de pantalla de Firefox y pcman](img/img_firefox.png)
+
+![Captura de pantalla de info del sistema](img/img_info.png)
+
+![Captura de pantalla de Spoty y dunts](img/img_spoty.png)
 
 ---
 
