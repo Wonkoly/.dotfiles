@@ -32,6 +32,7 @@ keys = [
     Key([mod], "space", lazy.spawn(menu_manager), desc="Abrir Rofi"),
     Key([mod], "f", lazy.spawn(browser), desc="Abre el navegador por defecto"),
     Key([mod], "e", lazy.spawn(explor_file), desc="Abre el navegador de archivos por defecto"),
+    Key([mod], "p", lazy.spawn("qutebrowser"), desc="Abre el navegador de qutebrowser"),
     Key([mod, "control"], "l", lazy.spawn("lockscreen"), desc="Bloquear pantalla"),
     Key([], "Print", lazy.spawn(screenshot_manager), desc="Captura de pantalla"),
 
