@@ -1,5 +1,6 @@
 from libqtile.config import Key
 from libqtile.lazy import lazy
+from bar_toggle import toggle_bar
 from groups import groups
 
 mod = "mod4"
@@ -35,6 +36,7 @@ keys = [
     Key([mod], "p", lazy.spawn("qutebrowser"), desc="Abre el navegador de qutebrowser"),
     Key([mod, "control"], "l", lazy.spawn("lockscreen"), desc="Bloquear pantalla"),
     Key([], "Print", lazy.spawn(screenshot_manager), desc="Captura de pantalla"),
+    Key([mod], "b", lazy.function(toggle_bar), desc="Mostrar/Ocultar barra"),
 
     # Atajo Cambio de Teclados
     Key([mod], "z", lazy.spawn("setxkbmap -layout 'us,latam' -option 'grp:alt_shift_toggle'"), desc="Alternar entre inglés y español"),
