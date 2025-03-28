@@ -1,0 +1,32 @@
+{
+  "logo": {
+    "type": "ascii",
+    "source": "arch"
+  },
+  "display": {
+    "separator": "  "
+  },
+  "modules": [
+    "Title",
+    "OS",
+    "Kernel",
+    "Uptime",
+    "Memory",
+    "CPU",
+    "GPU",
+    "Shell",
+    "WM",
+    "Terminal",
+    "Terminal Font"
+  ],
+  "colors": {
+    "foreground": "#ebdbb2",
+    "background": "#282828",
+    "title": "#fabd2f",
+    "separator": "#b8bb26",
+    "label": "#fe8019",
+    "value": "#83a598",
+    "logo": "#458588"
+  }
+}
+
