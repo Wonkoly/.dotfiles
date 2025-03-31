@@ -4,35 +4,20 @@
     "type": "split",
     "children": [
       {
-        "id": "ffce8313eb8726a8",
+        "id": "5a124dd812450c41",
         "type": "tabs",
         "children": [
           {
-            "id": "965d9667a4707fd8",
+            "id": "0ea805a3016265aa",
             "type": "leaf",
             "state": {
-              "type": "graph",
+              "type": "empty",
               "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Vista gráfica"
-            }
-          },
-          {
-            "id": "45f12131ede00731",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Sin título.md",
-                "mode": "source",
-                "source": false
-              },
               "icon": "lucide-file",
-              "title": "Sin título"
+              "title": "Nueva pestaña"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -179,7 +164,7 @@
       "command-palette:Abrir paleta de comandos": false
     }
   },
-  "active": "45f12131ede00731",
+  "active": "0ea805a3016265aa",
   "lastOpenFiles": [
     "Sin título.md",
     "Bienvenido.md"
