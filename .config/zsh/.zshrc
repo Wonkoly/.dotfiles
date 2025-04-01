@@ -26,6 +26,16 @@ else
   export EDITOR='nvim'
 fi
 
+command_not_found_handler() {
+  if [[ -f "$1" ]]; then
+    echo "📂 Abriendo '$1' con Neovim..."
+    nvim "$1"
+  else
+    echo "❌ Comando o archivo '$1' no encontrado."
+  fi
+}
+
+
 #-- ALIASES
 alias zshconfig="mate ~/.zshrc"
 alias ohmyzsh="mate ~/.oh-my-zsh"

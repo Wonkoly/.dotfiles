@@ -4,7 +4,7 @@ bar_states = {}
 
 def toggle_bar(qtile):
     for i, screen in enumerate(qtile.screens):
-        bar = screen.top
+        bar = screen.bottom
         if i not in bar_states:
             bar_states[i] = True  # Por defecto la barra está visible
 
