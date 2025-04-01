@@ -37,6 +37,12 @@ alias rmlogs="truncate -s 0 ~/.local/share/qtile/qtile.log && qtile cmd-obj -o c
 alias py="/sbin/python"
 alias cat="/sbin/bat --paging=never"
 
+alias ls="/sbin/lsd"
+alias ll="/sbin/lsd -l"
+alias la="/sbin/lsd -la"
+alias lt="/sbin/lsd --tree"
+
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 

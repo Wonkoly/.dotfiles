@@ -1,0 +1,61 @@
+window:
+  opacity: 0.95
+  padding:
+    x: 10
+    y: 10
+  decorations: full
+  dynamic_padding: true
+  startup_mode: Windowed
+
+font:
+  normal:
+    family: "CaskaydiaMono Nerd Font"
+    style: Regular
+  bold:
+    family: "CaskaydiaMono Nerd Font"
+    style: Bold
+  italic:
+    family: "CaskaydiaMono Nerd Font"
+    style: Italic
+  size: 12.5
+
+colors:
+  primary:
+    background: '0x1d2021'
+    foreground: '0xebdbb2'
+
+  normal:
+    black:   '0x282828'
+    red:     '0xcc241d'
+    green:   '0x98971a'
+    yellow:  '0xd79921'
+    blue:    '0x458588'
+    magenta: '0xb16286'
+    cyan:    '0x689d6a'
+    white:   '0xa89984'
+
+  bright:
+    black:   '0x928374'
+    red:     '0xfb4934'
+    green:   '0xb8bb26'
+    yellow:  '0xfabd2f'
+    blue:    '0x83a598'
+    magenta: '0xd3869b'
+    cyan:    '0x8ec07c'
+    white:   '0xebdbb2'
+
+cursor:
+  style:
+    shape: Beam
+    blinking: On
+  unfocused_hollow: true
+
+scrolling:
+  history: 10000
+  multiplier: 3
+
+draw_bold_text_with_bright_colors: true
+
+shell:
+  program: /bin/zsh
+

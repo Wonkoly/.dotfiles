@@ -27,6 +27,7 @@ keys = [
 
     # Atajos Teclado
     Key([mod], "Return", lazy.spawn(terminal), desc="Abrir terminal"),
+    Key([mod, "control"], "Return", lazy.spawn("alacritty"), desc="Bloquear pantalla"),
     Key([mod], "q", lazy.window.kill(), desc="Cerrar ventana"),
     Key([mod, "control"], "r", lazy.reload_config(), desc="Recargar configuración"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Cerrar sesión"),
@@ -37,6 +38,7 @@ keys = [
     Key([mod, "control"], "l", lazy.spawn("lockscreen"), desc="Bloquear pantalla"),
     Key([], "Print", lazy.spawn(screenshot_manager), desc="Captura de pantalla"),
     Key([mod], "b", lazy.function(toggle_bar), desc="Mostrar/Ocultar barra"),
+
 
     # Atajo Cambio de Teclados
     Key([mod], "z", lazy.spawn("setxkbmap -layout 'us,latam' -option 'grp:alt_shift_toggle'"), desc="Alternar entre inglés y español"),
