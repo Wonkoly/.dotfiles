@@ -28,13 +28,15 @@ fi
 
 command_not_found_handler() {
   if [[ -f "$1" ]]; then
-    echo "📂 Abriendo '$1' con Neovim..."
+    echo "📂 Abriendo archivo '$1' con Neovim..."
     nvim "$1"
+  elif [[ -d "$1" ]]; then
+    echo "📁 '$1' es una carpeta. Usa 'cd' para acceder."
   else
     echo "❌ Comando o archivo '$1' no encontrado."
   fi
+  return 127
 }
-
 
 #-- ALIASES
 alias zshconfig="mate ~/.zshrc"
