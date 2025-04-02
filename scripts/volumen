@@ -1,0 +1,27 @@
+#!/bin/bash
+
+case $1 in
+up)
+  pamixer -i 5
+  ;;
+down)
+  pamixer -d 5
+  ;;
+mute)
+  pamixer -t
+  ;;
+esac
+
+# Obtén volumen y estado
+VOLUME=$(pamixer --get-volume)
+MUTED=$(pamixer --get-mute)
+
+# Elige el ícono según estado
+if [ "$MUTED" = "true" ]; then
+  ICON="🔇"
+else
+  ICON="🔊"
+fi
+
+# Muestra notificación con dunst
+notify-send "Volumen $ICON" "${VOLUME}%"
