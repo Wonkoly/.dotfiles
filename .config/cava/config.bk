@@ -1,0 +1,16 @@
+[general]
+bars = 30
+framerate = 60
+
+[input]
+method = pulse
+
+[output]
+method = raw
+
+[raw]
+data_format = ascii
+ascii_max_range = 8
+bit_format = 8bit
+channels = mono
+

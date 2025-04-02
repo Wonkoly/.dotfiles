@@ -3,7 +3,7 @@
     follow = mouse
     width = 300
     height = 100
-    origin = top-right
+    origin = bottom-right
     offset = 10x50
     transparency = 10
     corner_radius = 10

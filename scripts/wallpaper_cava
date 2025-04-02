@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# Termina instancias previas
+pkill -f "kitty.*cava-bg"
+
+# Ejecuta cava en terminal transparente sin bordes
+kitty --class cava-bg --title cava-bg --override background_opacity=0.0 -e cava -p ~/.config/cava/config &
+
+sleep 1
+
+# Usa wmctrl y xdotool para enviar la ventana al fondo
+WIN_ID=$(xdotool search --name cava-bg | head -n 1)
+
+# Reglas para mandarla al fondo, quitar barra de título y dejarla sticky
+xprop -id "$WIN_ID" -f _NET_WM_WINDOW_TYPE 32a -set _NET_WM_WINDOW_TYPE _NET_WM_WINDOW_TYPE_DESKTOP
+wmctrl -i -r "$WIN_ID" -b add,below,sticky,skip_taskbar,skip_pager
+
+# Pierde el foco automáticamente
+xdotool windowunfocus "$win_id"
+xdotool windowminimize "$win_id"

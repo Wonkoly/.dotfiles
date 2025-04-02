@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Este script extrae una sola línea de cava en modo RAW
+cava -p ~/.config/cava/config | while read -r line; do
+    echo "$line"
+done
+

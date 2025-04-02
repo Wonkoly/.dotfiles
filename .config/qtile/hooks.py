@@ -28,4 +28,4 @@ def move_window_to_group(window):
         for app, group in app_group_map.items():
             if app in wm_class:
                 window.togroup(group)
-                break
+                break 
