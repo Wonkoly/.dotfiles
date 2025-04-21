@@ -19,6 +19,7 @@ def move_window_to_group(window):
         "firefox": "2",  # Firefox en el grupo 'web'
         "kitty": "1",    # Kitty en el grupo 'term'
         "obsidian": "4",  # Discord en el grupo 'chat'
+        "todoist": "4",  # Discord en el grupo 'chat'
         "spotify": "5", # Spotify en el grupo 'music'
         "code-oss": "3", 
     }
