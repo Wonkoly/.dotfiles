@@ -16,5 +16,5 @@ xprop -id "$WIN_ID" -f _NET_WM_WINDOW_TYPE 32a -set _NET_WM_WINDOW_TYPE _NET_WM_
 wmctrl -i -r "$WIN_ID" -b add,below,sticky,skip_taskbar,skip_pager
 
 # Pierde el foco automáticamente
-xdotool windowunfocus "$win_id"
-xdotool windowminimize "$win_id"
+xdotool windowunfocus "$WIN_ID"
+xdotool windowminimize "$WIN_ID"
