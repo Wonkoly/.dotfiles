@@ -1,9 +1,29 @@
 from libqtile import layout
+from theme import colors
 
 layouts = [
-    layout.MonadTall(margin=10, border_width=2, border_focus="#d79921", border_normal="#282828"),
-    layout.MonadWide(margin=10, border_width=2, border_focus="#d79921", border_normal="#282828"),
-    layout.Floating(border_width=2, border_focus="#d79921", border_normal="#282828"),
-    layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=4),
+    layout.MonadTall(
+        margin=10,
+        border_width=2,
+        border_focus=colors["border"],
+        border_normal=colors["background"],
+    ),
+    layout.MonadWide(
+        margin=10,
+        border_width=2,
+        border_focus=colors["border"],
+        border_normal=colors["background"],
+    ),
+    layout.Floating(
+        border_width=2,
+        border_focus=colors["border"],
+        border_normal=colors["background"],
+    ),
+    layout.Columns(
+        border_width=4,
+        border_focus=colors["border"],
+        border_normal=colors["background"],
+        border_focus_stack=[colors["border"], colors["background"]],
+    ),
     layout.Max(),
 ]
