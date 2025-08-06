@@ -9,11 +9,11 @@ from widgets import widget_defaults, widgets
 from screens import screens
 from mouse import mouse
 from floating import floating_layout
-from autostart import autostart
+from autostart import run
 
 @hook.subscribe.startup_once
 def start_once():
-    autostart()
+    run()
 
 # Configuración general
 dgroups_key_binder = None
