@@ -1,3 +1,5 @@
+mod = "mod4"
+
 from libqtile import hook
 import hooks
 from keys import keys
@@ -8,8 +10,6 @@ from screens import screens
 from mouse import mouse
 from floating import floating_layout
 from autostart import autostart
-
-mod = "mod4"
 
 @hook.subscribe.startup_once
 def start_once():

@@ -2,8 +2,7 @@ from libqtile.config import Key
 from libqtile.lazy import lazy
 from bar_toggle import toggle_bar
 from groups import groups
-
-mod = "mod4"
+from config import mod
 terminal = "kitty"
 menu_manager = "rofi -show drun"
 browser = "firefox"
