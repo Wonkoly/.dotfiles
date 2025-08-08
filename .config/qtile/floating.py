@@ -1,7 +1,11 @@
 from libqtile.config import Match
 from libqtile import layout
+from theme import colors
 
 floating_layout = layout.Floating(
+    border_width=2,
+    border_focus=colors["border"],
+    border_normal=colors["background"],
     float_rules=[
         *layout.Floating.default_float_rules,
         Match(wm_class="confirmreset"),
