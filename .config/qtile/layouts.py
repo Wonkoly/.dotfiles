@@ -14,11 +14,6 @@ layouts = [
         border_focus=colors["border"],
         border_normal=colors["background"],
     ),
-    layout.Floating(
-        border_width=2,
-        border_focus=colors["border"],
-        border_normal=colors["background"],
-    ),
     layout.Columns(
         border_width=4,
         border_focus=colors["border"],
