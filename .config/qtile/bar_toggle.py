@@ -1,16 +1,35 @@
+"""Utilities to toggle the visibility of Qtile bars.
+
+`bar_states` stores the current visibility of each screen's bar. The
+`DEFAULT_BAR_VISIBILITY` flag defines the initial visibility for any screen
+that does not yet have an entry in ``bar_states``.
+"""
+
 from libqtile import qtile
 
-bar_states = {}
+# Default visibility for newly discovered bars. ``True`` means the bar starts
+# visible.
+DEFAULT_BAR_VISIBILITY = True
 
-def toggle_bar(qtile):
+# Keeps track of the visibility state of each bar. Keys are screen indexes and
+# values are booleans indicating whether the bar is currently visible.
+bar_states: dict[int, bool] = {}
+
+
+def toggle_bar(qtile) -> None:
+    """Toggle the visibility of bars on all screens.
+
+    The function respects the initial value stored in ``bar_states`` or falls
+    back to ``DEFAULT_BAR_VISIBILITY`` when a screen is toggled for the first
+    time.
+    """
+
     for i, screen in enumerate(qtile.screens):
         bar = screen.bottom
-        if i not in bar_states:
-            bar_states[i] = True  # Por defecto la barra está visible
+        visible = bar_states.get(i, DEFAULT_BAR_VISIBILITY)
 
-        if bar_states[i]:
-            bar.show(False)
-        else:
-            bar.show(True)
+        # Show the bar if it is currently hidden and vice versa.
+        bar.show(not visible)
 
-        bar_states[i] = not bar_states[i]
+        # Store the updated visibility state.
+        bar_states[i] = not visible
