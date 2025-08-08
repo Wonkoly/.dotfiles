@@ -1,10 +1,10 @@
 from libqtile import widget
 from libqtile import qtile
-from theme import colors, font, font_size, bar_size
+from theme import colors, font, font_size
 
 widget_defaults = dict(
-    font="CaskaydiaMono Nerd Font",
-    fontsize=14,
+    font=font,
+    fontsize=font_size,
     padding=5,
 )
 
